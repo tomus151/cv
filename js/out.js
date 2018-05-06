@@ -22627,7 +22627,8 @@ var ProjectContainer = function (_React$Component4) {
      _createClass(ProjectContainer, [{
           key: "multipleFunction",
           value: function multipleFunction() {
-               this.handleClick().bind(this);
+               this.handleClick();
+
                this.props.showLightBoxShadow();
           }
      }, {

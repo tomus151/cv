@@ -103,6 +103,7 @@ class ProjectContainer extends React.Component{
      }
      multipleFunction(){
           this.handleClick();
+
           this.props.showLightBoxShadow();
      }
 
