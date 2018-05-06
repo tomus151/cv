@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import OwlCarousel from 'react-owl-carousel'
 import {Expirience} from './Expirience.jsx';
 import {Skills} from './Skills.jsx';
 import {Education} from './Education.jsx';
@@ -55,6 +56,7 @@ class App extends React.Component{
                LightBoxShadowIsActive: "",
                LightBoxIsActive: "",
           })
+          document.querySelector('body').classList.remove('active');
      }
      constructor(props){
           super(props);
