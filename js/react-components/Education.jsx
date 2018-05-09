@@ -1,4 +1,5 @@
 import React from 'react';
+import {ItemEducation} from './Education/ItemEducation.jsx'
 export class Education extends React.Component{
      render(){
           return(
@@ -19,20 +20,6 @@ export class Education extends React.Component{
                          </div>
                     </article>
                </section>
-          )
-     }
-}
-class ItemEducation extends React.Component{
-     render(){
-          return(
-               <div>
-                    <h4>{this.props.shoolName}</h4>
-                    <div className="education-description">
-                         <span>{this.props.title}</span>
-                         <span>Description:</span>
-                         <span>{this.props.description}</span>
-                    </div>
-               </div>
           )
      }
 }
