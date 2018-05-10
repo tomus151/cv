@@ -48,7 +48,7 @@ class App extends React.Component{
      showLightBoxShadow(){
           this.setState({
                LightBoxShadowIsActive: "active",
-               LightBoxIsActive: "active",
+               //LightBoxIsActive: "active",
           })
      }
      hideLightBoxShadow(){
@@ -56,6 +56,11 @@ class App extends React.Component{
                LightBoxShadowIsActive: "",
                LightBoxIsActive: "",
           })
+          // document.querySelectorAll('.light-box-container').forEach(function(item){
+          //   if(item.classList.contains('active')){
+          //     item.classList.remove('active');
+          //   }
+          // })
           document.querySelector('body').classList.remove('active');
      }
      constructor(props){
@@ -64,15 +69,17 @@ class App extends React.Component{
                LightBoxShadowIsActive: "",
                LightBoxIsActive: "",
           }
+          this.hideLightBoxShadow = this.hideLightBoxShadow.bind(this);
+          this.showLightBoxShadow = this.showLightBoxShadow.bind(this);
      }
 
      render(){
           return(
                <div>
-                    <LightboxShadow lightBoxShadowIsActive ={this.state.LightBoxShadowIsActive} hideLightBoxShadow={this.hideLightBoxShadow.bind(this)}/>
+                    <LightboxShadow lightBoxShadowIsActive ={this.state.LightBoxShadowIsActive} hideLightBoxShadow={this.hideLightBoxShadow}/>
                     <div className="page-wrapper">
                          <Header/>
-                         <Expirience showLightBoxShadow={this.showLightBoxShadow.bind(this)} lightBox={this.state.LightBoxIsActive}/>
+                         <Expirience showLightBoxShadow={this.showLightBoxShadow} lightBox={this.state.LightBoxIsActive}/>
                          <Skills/>
                          <Education/>
                          <PersonalProfile/>

@@ -845,13 +845,13 @@ var _reactOwlCarousel2 = _interopRequireDefault(_reactOwlCarousel);
 
 var _Expirience = __webpack_require__(26);
 
-var _Skills = __webpack_require__(27);
+var _Skills = __webpack_require__(32);
 
-var _Education = __webpack_require__(28);
+var _Education = __webpack_require__(33);
 
-var _PersonalProfile = __webpack_require__(29);
+var _PersonalProfile = __webpack_require__(35);
 
-var _AdditionalSkills = __webpack_require__(30);
+var _AdditionalSkills = __webpack_require__(36);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -903,8 +903,8 @@ document.addEventListener('DOMContentLoaded', function () {
                key: 'showLightBoxShadow',
                value: function showLightBoxShadow() {
                     this.setState({
-                         LightBoxShadowIsActive: "active",
-                         LightBoxIsActive: "active"
+                         LightBoxShadowIsActive: "active"
+                         //LightBoxIsActive: "active",
                     });
                }
           }, {
@@ -914,6 +914,11 @@ document.addEventListener('DOMContentLoaded', function () {
                          LightBoxShadowIsActive: "",
                          LightBoxIsActive: ""
                     });
+                    // document.querySelectorAll('.light-box-container').forEach(function(item){
+                    //   if(item.classList.contains('active')){
+                    //     item.classList.remove('active');
+                    //   }
+                    // })
                     document.querySelector('body').classList.remove('active');
                }
           }]);
@@ -927,6 +932,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     LightBoxShadowIsActive: "",
                     LightBoxIsActive: ""
                };
+               _this.hideLightBoxShadow = _this.hideLightBoxShadow.bind(_this);
+               _this.showLightBoxShadow = _this.showLightBoxShadow.bind(_this);
                return _this;
           }
 
@@ -936,12 +943,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _react2.default.createElement(
                          'div',
                          null,
-                         _react2.default.createElement(LightboxShadow, { lightBoxShadowIsActive: this.state.LightBoxShadowIsActive, hideLightBoxShadow: this.hideLightBoxShadow.bind(this) }),
+                         _react2.default.createElement(LightboxShadow, { lightBoxShadowIsActive: this.state.LightBoxShadowIsActive, hideLightBoxShadow: this.hideLightBoxShadow }),
                          _react2.default.createElement(
                               'div',
                               { className: 'page-wrapper' },
                               _react2.default.createElement(Header, null),
-                              _react2.default.createElement(_Expirience.Expirience, { showLightBoxShadow: this.showLightBoxShadow.bind(this), lightBox: this.state.LightBoxIsActive }),
+                              _react2.default.createElement(_Expirience.Expirience, { showLightBoxShadow: this.showLightBoxShadow, lightBox: this.state.LightBoxIsActive }),
                               _react2.default.createElement(_Skills.Skills, null),
                               _react2.default.createElement(_Education.Education, null),
                               _react2.default.createElement(_PersonalProfile.PersonalProfile, null),
@@ -19959,9 +19966,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ExpirienceOwnList = __webpack_require__(32);
+var _ExpirienceOwnList = __webpack_require__(27);
 
-var _ExpirienceParticipationList = __webpack_require__(33);
+var _ExpirienceParticipationList = __webpack_require__(30);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20092,6 +20099,401 @@ var Expirience = exports.Expirience = function (_React$Component) {
 
 /***/ }),
 /* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.ExpirienceOwnList = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ProjectContainer = __webpack_require__(28);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ExpirienceOwnList = exports.ExpirienceOwnList = function (_React$Component) {
+     _inherits(ExpirienceOwnList, _React$Component);
+
+     function ExpirienceOwnList() {
+          _classCallCheck(this, ExpirienceOwnList);
+
+          return _possibleConstructorReturn(this, (ExpirienceOwnList.__proto__ || Object.getPrototypeOf(ExpirienceOwnList)).apply(this, arguments));
+     }
+
+     _createClass(ExpirienceOwnList, [{
+          key: 'render',
+          value: function render() {
+               return _react2.default.createElement(
+                    'div',
+                    { className: 'expirience-mine' },
+                    _react2.default.createElement(
+                         'div',
+                         { className: 'expirience-itemlist-conatiner' },
+                         _react2.default.createElement(
+                              'div',
+                              { className: 'commercial-projects' },
+                              _react2.default.createElement(
+                                   'span',
+                                   { className: 'commercial-projects-injection' },
+                                   'Commercial projects:'
+                              ),
+                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { key: '1', showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/shop.swdgym.com/', linkToPage: 'https://shop.swdgym.com' }),
+                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { key: '2', showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/euro-klima.pl/', linkToPage: 'https://euro-klima.pl' }),
+                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { key: '3', showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/kitle.pl/', linkToPage: 'https://kitle.pl' }),
+                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { key: '4', showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/biomed-pharma.pl/', linkToPage: 'https://biomed-pharma.pl' })
+                         )
+                    )
+               );
+          }
+     }]);
+
+     return ExpirienceOwnList;
+}(_react2.default.Component);
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.ProjectContainer = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _LightBoxContainer = __webpack_require__(29);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
+     _inherits(ProjectContainer, _React$Component);
+
+     _createClass(ProjectContainer, [{
+          key: 'onHover',
+          value: function onHover(event) {
+               this.setState({
+                    displayHover: 'none'
+               });
+          }
+     }, {
+          key: 'handleClick',
+          value: function handleClick() {
+               this.setState({
+                    active: 'active'
+               });
+               document.querySelector('body').classList.add('active');
+          }
+     }, {
+          key: 'handleClickLightBox',
+          value: function handleClickLightBox() {
+               this.setState({
+                    isLightBoxActive: "active"
+               });
+          }
+     }, {
+          key: 'changeImageInLightBox',
+          value: function changeImageInLightBox() {
+               this.setState({
+                    dataValue: this.state.dataValue + 1
+               });
+               if (this.state.dataValue == 4) {
+                    this.setState({
+                         dataValue: 2,
+                         whitchImage: "home.png"
+                    });
+               }
+               if (this.state.dataValue == 3) {
+                    this.setState({
+                         whitchImage: "productView.png"
+                    });
+               } else if (this.state.dataValue == 2) {
+                    this.setState({
+                         whitchImage: "cart.png"
+                    });
+               }
+          }
+     }]);
+
+     function ProjectContainer(props) {
+          _classCallCheck(this, ProjectContainer);
+
+          var _this = _possibleConstructorReturn(this, (ProjectContainer.__proto__ || Object.getPrototypeOf(ProjectContainer)).call(this, props));
+
+          _this.state = {
+               displayHover: "",
+               active: "",
+               displayClick: "",
+               isLightBoxActive: "",
+               mainImage: "home.png",
+               whitchImage: "home.png",
+               dataValue: 2
+          };
+          _this.onHover = _this.onHover.bind(_this);
+          _this.multipleFunction = _this.multipleFunction.bind(_this);
+          _this.changeImageInLightBox = _this.changeImageInLightBox.bind(_this);
+          return _this;
+     }
+
+     _createClass(ProjectContainer, [{
+          key: 'multipleFunction',
+          value: function multipleFunction() {
+               this.handleClick();
+               this.props.showLightBoxShadow();
+               this.handleClickLightBox();
+          }
+     }, {
+          key: 'render',
+          value: function render() {
+               return _react2.default.createElement(
+                    'div',
+                    { className: 'expirience-item-container' },
+                    _react2.default.createElement('img', { className: 'expirience-monitor-image', src: 'images/monitor.svg' }),
+                    _react2.default.createElement(
+                         'div',
+                         { onMouseOver: this.onHover, onClick: this.multipleFunction, className: 'expirience-home-image-container {this.state.display}' },
+                         _react2.default.createElement('img', { className: 'expirience-home-image', src: this.props.srcImgPage + this.state.mainImage }),
+                         _react2.default.createElement(
+                              'div',
+                              { className: 'click-container ' + this.state.displayHover },
+                              _react2.default.createElement('img', { className: 'click-icon', src: 'images/click.svg', alt: 'click icon' })
+                         )
+                    ),
+                    _react2.default.createElement(
+                         'a',
+                         { href: this.props.linkToPage },
+                         this.props.linkToPage
+                    ),
+                    _react2.default.createElement(_LightBoxContainer.LightBoxContainer, { lightBox: this.state.isLightBoxActive, srcImgPage: this.props.srcImgPage + this.state.whitchImage, changeImageInLightBox: this.changeImageInLightBox, dataValue: this.state.dataValue })
+               );
+          }
+     }]);
+
+     return ProjectContainer;
+}(_react2.default.Component);
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.LightBoxContainer = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LightBoxContainer = exports.LightBoxContainer = function (_React$Component) {
+     _inherits(LightBoxContainer, _React$Component);
+
+     _createClass(LightBoxContainer, [{
+          key: 'hideArrow',
+          value: function hideArrow() {
+               this.setState({
+                    displayClick: 'none'
+               });
+          }
+     }, {
+          key: 'changeImage',
+          value: function changeImage() {}
+     }, {
+          key: 'multipleClick',
+          value: function multipleClick() {
+               this.hideArrow();
+               this.props.changeImageInLightBox();
+          }
+     }]);
+
+     function LightBoxContainer(props) {
+          _classCallCheck(this, LightBoxContainer);
+
+          var _this = _possibleConstructorReturn(this, (LightBoxContainer.__proto__ || Object.getPrototypeOf(LightBoxContainer)).call(this, props));
+
+          _this.state = {
+               displayClick: "",
+               dataValue: 1
+          };
+          _this.multipleClick = _this.multipleClick.bind(_this);
+          return _this;
+     }
+
+     _createClass(LightBoxContainer, [{
+          key: 'render',
+          value: function render() {
+               return _react2.default.createElement(
+                    'div',
+                    { className: 'light-box-container ' + this.props.lightBox },
+                    _react2.default.createElement('img', { className: 'expirience-monitor-image monitor-lightbox', src: 'images/monitor.svg' }),
+                    _react2.default.createElement(
+                         'div',
+                         { className: 'monitor-container', onClick: this.multipleClick },
+                         _react2.default.createElement('img', { 'data-counter': this.props.dataValue, src: this.props.srcImgPage, alt: 'pages-from-services' }),
+                         _react2.default.createElement('img', { className: 'click-icon ' + this.state.displayClick, src: 'images/click.svg', alt: 'click icon' })
+                    )
+               );
+          }
+     }]);
+
+     return LightBoxContainer;
+}(_react2.default.Component);
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.ExpirienceParticipationList = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ParticipationInProjectsItem = __webpack_require__(31);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ExpirienceParticipationList = exports.ExpirienceParticipationList = function (_React$Component) {
+     _inherits(ExpirienceParticipationList, _React$Component);
+
+     function ExpirienceParticipationList() {
+          _classCallCheck(this, ExpirienceParticipationList);
+
+          return _possibleConstructorReturn(this, (ExpirienceParticipationList.__proto__ || Object.getPrototypeOf(ExpirienceParticipationList)).apply(this, arguments));
+     }
+
+     _createClass(ExpirienceParticipationList, [{
+          key: 'render',
+          value: function render() {
+               return _react2.default.createElement(
+                    'div',
+                    { className: 'commercial-projects commercial-projects-participation' },
+                    _react2.default.createElement(
+                         'span',
+                         { className: 'participation-injection' },
+                         'Participation in projects:'
+                    ),
+                    _react2.default.createElement(
+                         'div',
+                         { className: 'participation-in-projects-container' },
+                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://klink.pl' }),
+                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://trec.pl' }),
+                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://bagstar.pl' }),
+                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://allora.sklep.pl' }),
+                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'http://aosadyba.msmenergetyka.pl' }),
+                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://swiatrowerow.com.pl/' })
+                    )
+               );
+          }
+     }]);
+
+     return ExpirienceParticipationList;
+}(_react2.default.Component);
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.ParticipationInProjectsItem = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ParticipationInProjectsItem = exports.ParticipationInProjectsItem = function (_React$Component) {
+     _inherits(ParticipationInProjectsItem, _React$Component);
+
+     function ParticipationInProjectsItem() {
+          _classCallCheck(this, ParticipationInProjectsItem);
+
+          return _possibleConstructorReturn(this, (ParticipationInProjectsItem.__proto__ || Object.getPrototypeOf(ParticipationInProjectsItem)).apply(this, arguments));
+     }
+
+     _createClass(ParticipationInProjectsItem, [{
+          key: 'render',
+          value: function render() {
+               return _react2.default.createElement(
+                    'a',
+                    { href: this.props.participationLink },
+                    this.props.participationLink
+               );
+          }
+     }]);
+
+     return ParticipationInProjectsItem;
+}(_react2.default.Component);
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20236,7 +20638,7 @@ var SkillItem = exports.SkillItem = function (_React$Component3) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 28 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20253,7 +20655,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ItemEducation = __webpack_require__(31);
+var _ItemEducation = __webpack_require__(34);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20315,133 +20717,7 @@ var Education = exports.Education = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-     value: true
-});
-exports.PersonalProfile = PersonalProfile;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function PersonalProfile() {
-     return _react2.default.createElement(
-          "section",
-          { className: "section__persona-profile" },
-          _react2.default.createElement(
-               "article",
-               null,
-               _react2.default.createElement(
-                    "div",
-                    { className: "section__image-and-title" },
-                    _react2.default.createElement(
-                         "div",
-                         null,
-                         _react2.default.createElement("i", { className: "fas fa-user" }),
-                         _react2.default.createElement(
-                              "h3",
-                              null,
-                              "Personal Profile"
-                         )
-                    )
-               ),
-               _react2.default.createElement(
-                    "div",
-                    { className: "center-div" },
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         "I'm working as Front-end developer this work make me happy. I like when i do what I do and that is it styling and programing"
-                    )
-               )
-          )
-     );
-}
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-     value: true
-});
-exports.AdditionalSkills = AdditionalSkills;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function AdditionalSkills() {
-     return _react2.default.createElement(
-          "footer",
-          { className: "footer__additional-skills" },
-          _react2.default.createElement(
-               "article",
-               null,
-               _react2.default.createElement(
-                    "div",
-                    { className: "section__image-and-title" },
-                    _react2.default.createElement(
-                         "div",
-                         null,
-                         _react2.default.createElement("i", { className: "fas fa-flask" }),
-                         _react2.default.createElement(
-                              "h3",
-                              null,
-                              "Additional Skills"
-                         )
-                    )
-               ),
-               _react2.default.createElement(
-                    "div",
-                    { className: "center-div" },
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         "English language level: B2"
-                    ),
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         "AutoCAD"
-                    ),
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         "MikroMap"
-                    ),
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         "Driving licence category B"
-                    ),
-                    _react2.default.createElement("br", null),
-                    _react2.default.createElement("br", null),
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         "I hereby agree for processing the following personal information strictly for recruitment purposes in accordance with the regulation regarding the protection data passed on the following date: 29.08.97r. Dz. U. nr 133 poz. 883"
-                    )
-               )
-          )
-     );
-}
-
-/***/ }),
-/* 31 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20513,235 +20789,6 @@ var ItemEducation = exports.ItemEducation = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-     value: true
-});
-exports.ExpirienceOwnList = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ProjectContainer = __webpack_require__(34);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ExpirienceOwnList = exports.ExpirienceOwnList = function (_React$Component) {
-     _inherits(ExpirienceOwnList, _React$Component);
-
-     function ExpirienceOwnList() {
-          _classCallCheck(this, ExpirienceOwnList);
-
-          return _possibleConstructorReturn(this, (ExpirienceOwnList.__proto__ || Object.getPrototypeOf(ExpirienceOwnList)).apply(this, arguments));
-     }
-
-     _createClass(ExpirienceOwnList, [{
-          key: 'render',
-          value: function render() {
-               return _react2.default.createElement(
-                    'div',
-                    { className: 'expirience-mine' },
-                    _react2.default.createElement(
-                         'div',
-                         { className: 'expirience-itemlist-conatiner' },
-                         _react2.default.createElement(
-                              'div',
-                              { className: 'commercial-projects' },
-                              _react2.default.createElement(
-                                   'span',
-                                   { className: 'commercial-projects-injection' },
-                                   'Commercial projects:'
-                              ),
-                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/shop.swdgym.com/home.png', linkToPage: 'https://shop.swdgym.com' }),
-                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/euro-klima.pl/home.png', linkToPage: 'https://euro-klima.pl' }),
-                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/kitle.pl/home.png', linkToPage: 'https://kitle.pl' }),
-                              _react2.default.createElement(_ProjectContainer.ProjectContainer, { showLightBoxShadow: this.props.showLightBoxShadow, lightBox: this.props.lightBox, srcImgPage: 'pages/biomed-pharma.pl/home.png', linkToPage: 'https://biomed-pharma.pl' })
-                         )
-                    )
-               );
-          }
-     }]);
-
-     return ExpirienceOwnList;
-}(_react2.default.Component);
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-     value: true
-});
-exports.ExpirienceParticipationList = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ParticipationInProjectsItem = __webpack_require__(35);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ExpirienceParticipationList = exports.ExpirienceParticipationList = function (_React$Component) {
-     _inherits(ExpirienceParticipationList, _React$Component);
-
-     function ExpirienceParticipationList() {
-          _classCallCheck(this, ExpirienceParticipationList);
-
-          return _possibleConstructorReturn(this, (ExpirienceParticipationList.__proto__ || Object.getPrototypeOf(ExpirienceParticipationList)).apply(this, arguments));
-     }
-
-     _createClass(ExpirienceParticipationList, [{
-          key: 'render',
-          value: function render() {
-               return _react2.default.createElement(
-                    'div',
-                    { className: 'commercial-projects commercial-projects-participation' },
-                    _react2.default.createElement(
-                         'span',
-                         { className: 'participation-injection' },
-                         'Participation in projects:'
-                    ),
-                    _react2.default.createElement(
-                         'div',
-                         { className: 'participation-in-projects-container' },
-                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://klink.pl' }),
-                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://trec.pl' }),
-                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://bagstar.pl' }),
-                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://allora.sklep.pl' }),
-                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'http://aosadyba.msmenergetyka.pl' }),
-                         _react2.default.createElement(_ParticipationInProjectsItem.ParticipationInProjectsItem, { participationLink: 'https://swiatrowerow.com.pl/' })
-                    )
-               );
-          }
-     }]);
-
-     return ExpirienceParticipationList;
-}(_react2.default.Component);
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-     value: true
-});
-exports.ProjectContainer = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _LightBoxContainer = __webpack_require__(36);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
-     _inherits(ProjectContainer, _React$Component);
-
-     _createClass(ProjectContainer, [{
-          key: 'onHover',
-          value: function onHover(event) {
-               this.setState({
-                    displayHover: 'none'
-               });
-          }
-     }, {
-          key: 'handleClick',
-          value: function handleClick() {
-               this.setState({
-                    active: 'active'
-               });
-               document.querySelector('body').classList.add('active');
-          }
-     }]);
-
-     function ProjectContainer(props) {
-          _classCallCheck(this, ProjectContainer);
-
-          var _this = _possibleConstructorReturn(this, (ProjectContainer.__proto__ || Object.getPrototypeOf(ProjectContainer)).call(this, props));
-
-          _this.state = {
-               displayHover: "",
-               active: "",
-               displayClick: ""
-          };
-          return _this;
-     }
-
-     _createClass(ProjectContainer, [{
-          key: 'multipleFunction',
-          value: function multipleFunction() {
-               this.handleClick();
-               this.props.showLightBoxShadow();
-          }
-     }, {
-          key: 'render',
-          value: function render() {
-               return _react2.default.createElement(
-                    'div',
-                    { className: 'expirience-item-container' },
-                    _react2.default.createElement('img', { className: 'expirience-monitor-image', src: 'images/monitor.svg' }),
-                    _react2.default.createElement(
-                         'div',
-                         { onMouseOver: this.onHover.bind(this), onClick: this.multipleFunction.bind(this), className: 'expirience-home-image-container {this.state.display}' },
-                         _react2.default.createElement('img', { className: 'expirience-home-image', src: this.props.srcImgPage }),
-                         _react2.default.createElement(
-                              'div',
-                              { className: 'click-container ' + this.state.displayHover },
-                              _react2.default.createElement('img', { className: 'click-icon', src: 'images/click.svg', alt: 'click icon' })
-                         )
-                    ),
-                    _react2.default.createElement(
-                         'a',
-                         { href: this.props.linkToPage },
-                         this.props.linkToPage
-                    ),
-                    _react2.default.createElement(_LightBoxContainer.LightBoxContainer, { lightBox: this.props.lightBox, srcImgPage: this.props.srcImgPage })
-               );
-          }
-     }]);
-
-     return ProjectContainer;
-}(_react2.default.Component);
-
-/***/ }),
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20751,9 +20798,7 @@ var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
 Object.defineProperty(exports, "__esModule", {
      value: true
 });
-exports.ParticipationInProjectsItem = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+exports.PersonalProfile = PersonalProfile;
 
 var _react = __webpack_require__(0);
 
@@ -20761,34 +20806,39 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ParticipationInProjectsItem = exports.ParticipationInProjectsItem = function (_React$Component) {
-     _inherits(ParticipationInProjectsItem, _React$Component);
-
-     function ParticipationInProjectsItem() {
-          _classCallCheck(this, ParticipationInProjectsItem);
-
-          return _possibleConstructorReturn(this, (ParticipationInProjectsItem.__proto__ || Object.getPrototypeOf(ParticipationInProjectsItem)).apply(this, arguments));
-     }
-
-     _createClass(ParticipationInProjectsItem, [{
-          key: 'render',
-          value: function render() {
-               return _react2.default.createElement(
-                    'a',
-                    { href: this.props.participationLink },
-                    this.props.participationLink
-               );
-          }
-     }]);
-
-     return ParticipationInProjectsItem;
-}(_react2.default.Component);
+function PersonalProfile() {
+     return _react2.default.createElement(
+          "section",
+          { className: "section__persona-profile" },
+          _react2.default.createElement(
+               "article",
+               null,
+               _react2.default.createElement(
+                    "div",
+                    { className: "section__image-and-title" },
+                    _react2.default.createElement(
+                         "div",
+                         null,
+                         _react2.default.createElement("i", { className: "fas fa-user" }),
+                         _react2.default.createElement(
+                              "h3",
+                              null,
+                              "Personal Profile"
+                         )
+                    )
+               ),
+               _react2.default.createElement(
+                    "div",
+                    { className: "center-div" },
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         "I'm working as Front-end developer this work make me happy. I like when i do what I do and that is it styling and programing"
+                    )
+               )
+          )
+     );
+}
 
 /***/ }),
 /* 36 */
@@ -20800,9 +20850,7 @@ var ParticipationInProjectsItem = exports.ParticipationInProjectsItem = function
 Object.defineProperty(exports, "__esModule", {
      value: true
 });
-exports.LightBoxContainer = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+exports.AdditionalSkills = AdditionalSkills;
 
 var _react = __webpack_require__(0);
 
@@ -20810,54 +20858,61 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var LightBoxContainer = exports.LightBoxContainer = function (_React$Component) {
-     _inherits(LightBoxContainer, _React$Component);
-
-     _createClass(LightBoxContainer, [{
-          key: 'hideArrow',
-          value: function hideArrow() {
-               this.setState({
-                    displayClick: 'none'
-               });
-          }
-     }]);
-
-     function LightBoxContainer(props) {
-          _classCallCheck(this, LightBoxContainer);
-
-          var _this = _possibleConstructorReturn(this, (LightBoxContainer.__proto__ || Object.getPrototypeOf(LightBoxContainer)).call(this, props));
-
-          _this.state = {
-               displayClick: ""
-          };
-          return _this;
-     }
-
-     _createClass(LightBoxContainer, [{
-          key: 'render',
-          value: function render() {
-               return _react2.default.createElement(
-                    'div',
-                    { className: 'light-box-container ' + this.props.lightBox },
-                    _react2.default.createElement('img', { className: 'expirience-monitor-image monitor-lightbox', src: 'images/monitor.svg' }),
+function AdditionalSkills() {
+     return _react2.default.createElement(
+          "footer",
+          { className: "footer__additional-skills" },
+          _react2.default.createElement(
+               "article",
+               null,
+               _react2.default.createElement(
+                    "div",
+                    { className: "section__image-and-title" },
                     _react2.default.createElement(
-                         'div',
-                         { className: 'monitor-container', onClick: this.hideArrow.bind(this) },
-                         _react2.default.createElement('img', { 'data-counter': '1', src: this.props.srcImgPage, alt: 'pages-from-services' }),
-                         _react2.default.createElement('img', { className: 'click-icon ' + this.state.displayClick, src: 'images/click.svg', alt: 'click icon' })
+                         "div",
+                         null,
+                         _react2.default.createElement("i", { className: "fas fa-flask" }),
+                         _react2.default.createElement(
+                              "h3",
+                              null,
+                              "Additional Skills"
+                         )
                     )
-               );
-          }
-     }]);
-
-     return LightBoxContainer;
-}(_react2.default.Component);
+               ),
+               _react2.default.createElement(
+                    "div",
+                    { className: "center-div" },
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         "English language level: B2"
+                    ),
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         "AutoCAD"
+                    ),
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         "MikroMap"
+                    ),
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         "Driving licence category B"
+                    ),
+                    _react2.default.createElement("br", null),
+                    _react2.default.createElement("br", null),
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         "I hereby agree for processing the following personal information strictly for recruitment purposes in accordance with the regulation regarding the protection data passed on the following date: 29.08.97r. Dz. U. nr 133 poz. 883"
+                    )
+               )
+          )
+     );
+}
 
 /***/ })
 /******/ ]);
