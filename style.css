@@ -249,6 +249,8 @@ h3{
      width:50px;
      z-index:2;
      position:absolute;
+     top:50%;
+     transform: translateY(-50%);
 }
 .skills-left{
      left:-50px;
