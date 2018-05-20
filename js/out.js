@@ -845,13 +845,13 @@ var _reactOwlCarousel2 = _interopRequireDefault(_reactOwlCarousel);
 
 var _Expirience = __webpack_require__(26);
 
-var _Skills = __webpack_require__(32);
+var _Skills = __webpack_require__(33);
 
-var _Education = __webpack_require__(33);
+var _Education = __webpack_require__(35);
 
-var _PersonalProfile = __webpack_require__(35);
+var _PersonalProfile = __webpack_require__(37);
 
-var _AdditionalSkills = __webpack_require__(36);
+var _AdditionalSkills = __webpack_require__(38);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -943,7 +943,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     return _react2.default.createElement(
                          'div',
                          null,
-                         _react2.default.createElement(LightboxShadow, { lightBoxShadowIsActive: this.state.LightBoxShadowIsActive, hideLightBoxShadow: this.hideLightBoxShadow }),
                          _react2.default.createElement(
                               'div',
                               { className: 'page-wrapper' },
@@ -968,27 +967,8 @@ document.addEventListener('DOMContentLoaded', function () {
           return App;
      }(_react2.default.Component);
 
-     var LightboxShadow = function (_React$Component2) {
-          _inherits(LightboxShadow, _React$Component2);
-
-          function LightboxShadow() {
-               _classCallCheck(this, LightboxShadow);
-
-               return _possibleConstructorReturn(this, (LightboxShadow.__proto__ || Object.getPrototypeOf(LightboxShadow)).apply(this, arguments));
-          }
-
-          _createClass(LightboxShadow, [{
-               key: 'render',
-               value: function render() {
-                    return _react2.default.createElement('div', { className: 'light-box-backshadow ' + this.props.lightBoxShadowIsActive, onClick: this.props.hideLightBoxShadow });
-               }
-          }]);
-
-          return LightboxShadow;
-     }(_react2.default.Component);
-
-     var Header = function (_React$Component3) {
-          _inherits(Header, _React$Component3);
+     var Header = function (_React$Component2) {
+          _inherits(Header, _React$Component2);
 
           function Header() {
                _classCallCheck(this, Header);
@@ -1020,8 +1000,8 @@ document.addEventListener('DOMContentLoaded', function () {
           return Header;
      }(_react2.default.Component);
 
-     var HeaderImage = function (_React$Component4) {
-          _inherits(HeaderImage, _React$Component4);
+     var HeaderImage = function (_React$Component3) {
+          _inherits(HeaderImage, _React$Component3);
 
           function HeaderImage() {
                _classCallCheck(this, HeaderImage);
@@ -1043,8 +1023,8 @@ document.addEventListener('DOMContentLoaded', function () {
           return HeaderImage;
      }(_react2.default.Component);
 
-     var HeaderContactData = function (_React$Component5) {
-          _inherits(HeaderContactData, _React$Component5);
+     var HeaderContactData = function (_React$Component4) {
+          _inherits(HeaderContactData, _React$Component4);
 
           function HeaderContactData() {
                _classCallCheck(this, HeaderContactData);
@@ -19968,7 +19948,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _ExpirienceOwnList = __webpack_require__(27);
 
-var _ExpirienceParticipationList = __webpack_require__(30);
+var _ExpirienceParticipationList = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20184,6 +20164,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _LightBoxContainer = __webpack_require__(29);
 
+var _LightBoxShadow = __webpack_require__(30);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20216,6 +20198,22 @@ var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
                this.setState({
                     isLightBoxActive: "active"
                });
+          }
+     }, {
+          key: 'activateShadow',
+          value: function activateShadow() {
+               this.setState({
+                    shadowIsActive: "active"
+               });
+          }
+     }, {
+          key: 'disactivateShadow',
+          value: function disactivateShadow() {
+               this.setState({
+                    shadowIsActive: "",
+                    isLightBoxActive: ""
+               });
+               document.querySelector('body').classList.remove('active');
           }
      }, {
           key: 'changeImageInLightBox',
@@ -20253,11 +20251,14 @@ var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
                isLightBoxActive: "",
                mainImage: "home.png",
                whitchImage: "home.png",
-               dataValue: 2
+               dataValue: 2,
+               shadowIsActive: ""
           };
           _this.onHover = _this.onHover.bind(_this);
           _this.multipleFunction = _this.multipleFunction.bind(_this);
           _this.changeImageInLightBox = _this.changeImageInLightBox.bind(_this);
+          _this.activateShadow = _this.activateShadow.bind(_this);
+          _this.disactivateShadow = _this.disactivateShadow.bind(_this);
           return _this;
      }
 
@@ -20267,6 +20268,7 @@ var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
                this.handleClick();
                this.props.showLightBoxShadow();
                this.handleClickLightBox();
+               this.activateShadow();
           }
      }, {
           key: 'render',
@@ -20290,7 +20292,8 @@ var ProjectContainer = exports.ProjectContainer = function (_React$Component) {
                          { href: this.props.linkToPage },
                          this.props.linkToPage
                     ),
-                    _react2.default.createElement(_LightBoxContainer.LightBoxContainer, { lightBox: this.state.isLightBoxActive, srcImgPage: this.props.srcImgPage + this.state.whitchImage, changeImageInLightBox: this.changeImageInLightBox, dataValue: this.state.dataValue })
+                    _react2.default.createElement(_LightBoxContainer.LightBoxContainer, { lightBox: this.state.isLightBoxActive, srcImgPage: this.props.srcImgPage + this.state.whitchImage, changeImageInLightBox: this.changeImageInLightBox, dataValue: this.state.dataValue }),
+                    _react2.default.createElement(_LightBoxShadow.LightBoxShadow, { shadowIsActive: this.state.shadowIsActive, disactivateShadow: this.disactivateShadow })
                );
           }
      }]);
@@ -20388,6 +20391,51 @@ var LightBoxContainer = exports.LightBoxContainer = function (_React$Component) 
 Object.defineProperty(exports, "__esModule", {
      value: true
 });
+exports.LightBoxShadow = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LightBoxShadow = exports.LightBoxShadow = function (_React$Component) {
+     _inherits(LightBoxShadow, _React$Component);
+
+     function LightBoxShadow() {
+          _classCallCheck(this, LightBoxShadow);
+
+          return _possibleConstructorReturn(this, (LightBoxShadow.__proto__ || Object.getPrototypeOf(LightBoxShadow)).apply(this, arguments));
+     }
+
+     _createClass(LightBoxShadow, [{
+          key: 'render',
+          value: function render() {
+               return _react2.default.createElement('div', { className: 'light-box-backshadow ' + this.props.shadowIsActive, onClick: this.props.disactivateShadow });
+          }
+     }]);
+
+     return LightBoxShadow;
+}(_react2.default.Component);
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
 exports.ExpirienceParticipationList = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20396,7 +20444,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ParticipationInProjectsItem = __webpack_require__(31);
+var _ParticipationInProjectsItem = __webpack_require__(32);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20444,7 +20492,7 @@ var ExpirienceParticipationList = exports.ExpirienceParticipationList = function
 }(_react2.default.Component);
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20493,7 +20541,7 @@ var ParticipationInProjectsItem = exports.ParticipationInProjectsItem = function
 }(_react2.default.Component);
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20502,13 +20550,15 @@ var ParticipationInProjectsItem = exports.ParticipationInProjectsItem = function
 Object.defineProperty(exports, "__esModule", {
      value: true
 });
-exports.SkillItem = exports.SkillsList = exports.Skills = undefined;
+exports.Skills = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _SkillsList = __webpack_require__(34);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20528,29 +20578,29 @@ var Skills = exports.Skills = function (_React$Component) {
      }
 
      _createClass(Skills, [{
-          key: "render",
+          key: 'render',
           value: function render() {
                return _react2.default.createElement(
-                    "section",
-                    { className: "section__skills" },
+                    'section',
+                    { className: 'section__skills' },
                     _react2.default.createElement(
-                         "article",
+                         'article',
                          null,
                          _react2.default.createElement(
-                              "div",
-                              { className: "section__image-and-title" },
+                              'div',
+                              { className: 'section__image-and-title' },
                               _react2.default.createElement(
-                                   "div",
+                                   'div',
                                    null,
-                                   _react2.default.createElement("i", { className: "fas fa-chart-pie" }),
+                                   _react2.default.createElement('i', { className: 'fas fa-chart-pie' }),
                                    _react2.default.createElement(
-                                        "h3",
+                                        'h3',
                                         null,
-                                        "Skills"
+                                        'Skills'
                                    )
                               )
                          ),
-                         _react2.default.createElement(SkillsList, null)
+                         _react2.default.createElement(_SkillsList.SkillsList, null)
                     )
                );
           }
@@ -20559,86 +20609,122 @@ var Skills = exports.Skills = function (_React$Component) {
      return Skills;
 }(_react2.default.Component);
 
-var SkillsList = exports.SkillsList = function (_React$Component2) {
-     _inherits(SkillsList, _React$Component2);
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
 
-     function SkillsList() {
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.SkillsList = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SkillItem = __webpack_require__(39);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SkillsList = exports.SkillsList = function (_React$Component) {
+     _inherits(SkillsList, _React$Component);
+
+     function SkillsList(props) {
           _classCallCheck(this, SkillsList);
 
-          return _possibleConstructorReturn(this, (SkillsList.__proto__ || Object.getPrototypeOf(SkillsList)).apply(this, arguments));
+          var _this = _possibleConstructorReturn(this, (SkillsList.__proto__ || Object.getPrototypeOf(SkillsList)).call(this, props));
+
+          _this.state = {
+               witchElementCarousel: 0,
+               translateX: 0
+          };
+          _this.nextElement = _this.nextElement.bind(_this);
+          _this.prevElement = _this.prevElement.bind(_this);
+          return _this;
      }
 
      _createClass(SkillsList, [{
-          key: "render",
+          key: 'nextElement',
+          value: function nextElement() {
+               if (this.state.witchElementCarousel < this.state.arrayElementsLength - 4) {
+                    this.setState({
+                         witchElementCarousel: this.state.witchElementCarousel + 1,
+                         translateX: this.state.translateX - 220
+                    });
+               }
+          }
+     }, {
+          key: 'prevElement',
+          value: function prevElement() {
+               if (this.state.witchElementCarousel > 0) {
+                    this.setState({
+                         witchElementCarousel: this.state.witchElementCarousel - 1,
+                         translateX: this.state.translateX + 220
+                    });
+               }
+          }
+     }, {
+          key: 'render',
           value: function render() {
                return _react2.default.createElement(
-                    "div",
-                    { className: "center-div" },
-                    _react2.default.createElement("img", { className: "skills-left", src: "images/chevron-left.svg" }),
+                    'div',
+                    { className: 'center-div' },
+                    _react2.default.createElement('img', { className: 'skills-left', src: 'images/chevron-left.svg', onClick: this.prevElement }),
                     _react2.default.createElement(
-                         "div",
-                         { className: "skills-mine" },
+                         'div',
+                         { className: 'skills-mine', 'data-element': this.state.wicthElementCarousel },
                          _react2.default.createElement(
-                              "div",
-                              { className: "skills-itemlist-conatiner" },
-                              _react2.default.createElement(SkillItem, { srcImg: "js-min.png", altImg: " ", name: "Java Script" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "jquery-min.png", altImg: "jQuery logo", name: "jQuery" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "react-min.png", altImg: "React logo", name: "React" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "php-min.png", altImg: "PHP logo", name: "PHP" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "mysql-min.png", altImg: "MySql logo", name: "MySql" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "CSS3-min.png", altImg: "CSS3 logo", name: "CSS3" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "less-min.png", altImg: "Less logo", name: "Less" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "sass-min.png", altImg: "Sass logo", name: "Sass" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "html-min.png", altImg: "HTML 5 logo", name: "HTML 5" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "git-min.png", altImg: "Git logo", name: "Git" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "rwd-min.png", altImg: "RWD logo", name: "RWD" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "webpack-min.png", altImg: "Webpack logo", name: "Webpack" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "gulp.svg", altImg: "Gulp logo", name: "Gulp" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "grunt.svg", altImg: "Grunt logo", name: "Grunt" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "compass-min.png", altImg: "Compass logo", name: "Compass" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "magento-min.png", altImg: "Magento logo", name: "Magento" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "magento2-min.png", altImg: "Magento 2 logo", name: "Magento 2" }),
-                              _react2.default.createElement(SkillItem, { srcImg: "ps-min.png", altImg: "PhotoShop logo", name: "PhotoShop" })
+                              'div',
+                              { className: 'skills-itemlist-conatiner', style: { transform: 'translateX(' + this.state.translateX + 'px)' } },
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'js-min.png', altImg: ' ', name: 'Java Script' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'jquery-min.png', altImg: 'jQuery logo', name: 'jQuery' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'react-min.png', altImg: 'React logo', name: 'React' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'php-min.png', altImg: 'PHP logo', name: 'PHP' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'mysql-min.png', altImg: 'MySql logo', name: 'MySql' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'CSS3-min.png', altImg: 'CSS3 logo', name: 'CSS3' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'less-min.png', altImg: 'Less logo', name: 'Less' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'sass-min.png', altImg: 'Sass logo', name: 'Sass' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'html-min.png', altImg: 'HTML 5 logo', name: 'HTML 5' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'git-min.png', altImg: 'Git logo', name: 'Git' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'rwd-min.png', altImg: 'RWD logo', name: 'RWD' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'webpack-min.png', altImg: 'Webpack logo', name: 'Webpack' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'gulp.svg', altImg: 'Gulp logo', name: 'Gulp' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'grunt.svg', altImg: 'Grunt logo', name: 'Grunt' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'compass-min.png', altImg: 'Compass logo', name: 'Compass' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'magento-min.png', altImg: 'Magento logo', name: 'Magento' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'magento2-min.png', altImg: 'Magento 2 logo', name: 'Magento 2' }),
+                              _react2.default.createElement(_SkillItem.SkillItem, { srcImg: 'ps-min.png', altImg: 'PhotoShop logo', name: 'PhotoShop' })
                          )
                     ),
-                    _react2.default.createElement("img", { className: "skills-right", src: "images/chevron-right.svg" })
+                    _react2.default.createElement('img', { className: 'skills-right', src: 'images/chevron-right.svg', onClick: this.nextElement })
                );
+          }
+     }, {
+          key: 'componentDidMount',
+          value: function componentDidMount() {
+               var lengthElements = document.querySelectorAll('.section__skills-item-container').length;
+               this.setState({
+                    arrayElementsLength: lengthElements
+               });
           }
      }]);
 
      return SkillsList;
 }(_react2.default.Component);
 
-var SkillItem = exports.SkillItem = function (_React$Component3) {
-     _inherits(SkillItem, _React$Component3);
-
-     function SkillItem() {
-          _classCallCheck(this, SkillItem);
-
-          return _possibleConstructorReturn(this, (SkillItem.__proto__ || Object.getPrototypeOf(SkillItem)).apply(this, arguments));
-     }
-
-     _createClass(SkillItem, [{
-          key: "render",
-          value: function render() {
-               return _react2.default.createElement(
-                    "div",
-                    { className: "section__skills-item-container" },
-                    _react2.default.createElement("img", { src: "technologie/compresspng/" + this.props.srcImg, alt: this.props.altImg }),
-                    _react2.default.createElement(
-                         "span",
-                         null,
-                         this.props.name
-                    )
-               );
-          }
-     }]);
-
-     return SkillItem;
-}(_react2.default.Component);
-
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20655,7 +20741,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ItemEducation = __webpack_require__(34);
+var _ItemEducation = __webpack_require__(36);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20717,7 +20803,7 @@ var Education = exports.Education = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20789,7 +20875,7 @@ var ItemEducation = exports.ItemEducation = function (_React$Component) {
 }(_react2.default.Component);
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20841,7 +20927,7 @@ function PersonalProfile() {
 }
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20913,6 +20999,60 @@ function AdditionalSkills() {
           )
      );
 }
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+     value: true
+});
+exports.SkillItem = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SkillItem = exports.SkillItem = function (_React$Component) {
+     _inherits(SkillItem, _React$Component);
+
+     function SkillItem() {
+          _classCallCheck(this, SkillItem);
+
+          return _possibleConstructorReturn(this, (SkillItem.__proto__ || Object.getPrototypeOf(SkillItem)).apply(this, arguments));
+     }
+
+     _createClass(SkillItem, [{
+          key: "render",
+          value: function render() {
+               return _react2.default.createElement(
+                    "div",
+                    { className: "section__skills-item-container" },
+                    _react2.default.createElement("img", { src: "technologie/compresspng/" + this.props.srcImg, alt: this.props.altImg }),
+                    _react2.default.createElement(
+                         "span",
+                         null,
+                         this.props.name
+                    )
+               );
+          }
+     }]);
+
+     return SkillItem;
+}(_react2.default.Component);
 
 /***/ })
 /******/ ]);

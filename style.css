@@ -265,6 +265,7 @@ h3{
      display:flex;
      align-items: center;
      width:3960px;
+     transition: 0.75s all;
 }
 .commercial-projects{
      display:flex;
@@ -373,6 +374,8 @@ h3{
 .light-box-backshadow{
      display:none;
      position: fixed;
+     top:0;
+     left:0;
      width:100vw;
      height:100vh;
      background:#000;

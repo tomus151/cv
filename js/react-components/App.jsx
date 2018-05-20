@@ -76,7 +76,6 @@ class App extends React.Component{
      render(){
           return(
                <div>
-                    <LightboxShadow lightBoxShadowIsActive ={this.state.LightBoxShadowIsActive} hideLightBoxShadow={this.hideLightBoxShadow}/>
                     <div className="page-wrapper">
                          <Header/>
                          <Expirience showLightBoxShadow={this.showLightBoxShadow} lightBox={this.state.LightBoxIsActive}/>
@@ -94,13 +93,7 @@ class App extends React.Component{
           this.showHide();
      }
 }
-class LightboxShadow extends React.Component{
-     render(){
-          return(
-               <div className={`light-box-backshadow ${this.props.lightBoxShadowIsActive}`} onClick={this.props.hideLightBoxShadow}></div>
-          )
-     }
-}
+
 class Header extends React.Component{
      render(){
           return(
