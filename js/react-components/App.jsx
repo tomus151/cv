@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import OwlCarousel from 'react-owl-carousel'
+import {Header} from './Header.jsx'
 import {Expirience} from './Expirience.jsx';
 import {Skills} from './Skills.jsx';
 import {Education} from './Education.jsx';
@@ -48,9 +48,6 @@ class App extends React.Component{
                     }else{
                       itemToShow.style.display = 'none';
                     }
-
-
-
                })
           })
      }
@@ -65,11 +62,6 @@ class App extends React.Component{
                LightBoxShadowIsActive: "",
                LightBoxIsActive: "",
           })
-          // document.querySelectorAll('.light-box-container').forEach(function(item){
-          //   if(item.classList.contains('active')){
-          //     item.classList.remove('active');
-          //   }
-          // })
           document.querySelector('body').classList.remove('active');
      }
      constructor(props){
@@ -100,40 +92,6 @@ class App extends React.Component{
           this.addElementToClick();
           this.hideHide();
           this.showHide();
-     }
-}
-
-class Header extends React.Component{
-     render(){
-          return(
-               <header className="header__container">
-                    <div className="header__item-container">
-                         <HeaderImage srcImg="images/ja-min.jpg" altImg="zdjęcie autora"/>
-                         <HeaderContactData mail="tmarkowski1991@gmail.com" tel="+48506231770"/>
-                    </div>
-                    <p>Please contact me after 4 p.m.</p>
-               </header>
-          );
-     }
-}
-class HeaderImage extends React.Component{
-     render(){
-          return(
-               <div>
-                    <img src={this.props.srcImg} alt={this.props.altImg}/>
-               </div>
-          );
-     }
-}
-class HeaderContactData extends React.Component{
-     render(){
-          return(
-               <div className="contact-data">
-                    <h1>Tomasz Markowski</h1>
-                    <a href={"mailto:"+ this.props.mail}>e-mail: {this.props.mail}</a>
-                    <a href={"tel:" + this.props.tel}>tel.{this.props.tel}</a>
-               </div>
-          )
      }
 }
 
