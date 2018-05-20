@@ -894,8 +894,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelectorAll('.hideShow').forEach(function (item) {
                          item.addEventListener('click', function () {
                               console.log(item);
+                              var style = void 0;
                               var itemToShow = item.parentElement.querySelector('.center-div');
-                              itemToShow.style.display = 'block';
+                              style = itemToShow.style.display;
+                              if (style == "none") {
+                                   itemToShow.style.display = 'block';
+                              } else {
+                                   itemToShow.style.display = 'none';
+                              }
                          });
                     });
                }

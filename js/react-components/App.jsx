@@ -40,8 +40,17 @@ class App extends React.Component{
           document.querySelectorAll('.hideShow').forEach(function(item){
                item.addEventListener('click',function(){
                     console.log(item);
-                    var itemToShow = item.parentElement.querySelector('.center-div');
-                    itemToShow.style.display = 'block';
+                    let style;
+                    const itemToShow = item.parentElement.querySelector('.center-div');
+                    style = itemToShow.style.display;
+                    if(style == "none"){
+                      itemToShow.style.display = 'block';
+                    }else{
+                      itemToShow.style.display = 'none';
+                    }
+
+
+
                })
           })
      }
